@@ -21,6 +21,7 @@ be seen as "lightweight" virtual machines. Follow the steps below to install the
   * [Jupyter 1.0](http://jupyter.org/)
   * [VIM 7.4](http://www.vim.org/)
   * [Git 2.7.4](https://git-scm.com/)
+  * [Nano 2.5.3](https://www.nano-editor.org/)
   * all source files contained in this repository
 5. To start the docker container run `docker run -it -p 8080:8080 jestherday/feedback`
 6. To start the webapp (currently placeholder) run `python src/webdummy.py`
@@ -37,8 +38,11 @@ be seen as "lightweight" virtual machines. Follow the steps below to install the
 [Interactive VIM tutorial (free)](http://www.openvim.com/), 
 [VIM adventures (freemium)](http://vim-adventures.com/)
 
+#### Nano (via command line)
+*"GNU nano is designed to be a free replacement for the Pico text editor, part of the Pine email suite from The University of Washington. It aims to "emulate Pico as closely as possible and perhaps include extra functionality"."* <sup>[[2]](https://www.nano-editor.org/dist/v2.7/faq.html#1.3)</sup>
+
 #### Jupyter (via web browser)
-*"The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more."* <sup>[[2]](http://jupyter.org/#about-notebook)</sup> The docker container is set up in a way, that you can run a Jupyter server within the container that can be accessed through the hosts' web browser. This
+*"The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more."* <sup>[[3]](http://jupyter.org/#about-notebook)</sup> The docker container is set up in a way, that you can run a Jupyter server within the container that can be accessed through the hosts' web browser. This
 requires a slightly different starting procedure (compared to the one stated above):
 
 1. Follow steps 1,2,3 & 4 from the [section above](#how-to-install)
@@ -52,4 +56,5 @@ requires a slightly different starting procedure (compared to the one stated abo
 
 ***
 [1] - Vim Homepage, www.vim.org<br>
-[2] - Jupyter Homepage, http://jupyter.org
+[2] - Nano FAQs, https://www.nano-editor.org/dist/v2.7/faq.html#1.3<br>
+[3] - Jupyter Homepage, http://jupyter.org
