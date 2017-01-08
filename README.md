@@ -52,4 +52,4 @@ requires a slightly different starting procedure (compared to the one stated abo
 
 ***
 [1] - Vim Homepage, www.vim.org<br>
-[2] - Jupyter Homepage, http://jupyter.org
+[2] - Jupyter Homepage, jupyter.org
