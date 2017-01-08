@@ -23,7 +23,8 @@ python-pip \
 postgresql-9.5 \
 postgresql-server-dev-9.5 \
 vim \
-git 
+git \
+nano
 
 ## ---  PYTHON --- ##
 # Put python requirements file into container
