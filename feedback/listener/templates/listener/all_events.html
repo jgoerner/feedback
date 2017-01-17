@@ -1,0 +1,42 @@
+<html>
+    <head>
+	{# include stylesheets #}
+        {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'listener/materialize/css/materialize.css' %}" />
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<style>
+		body{
+		font-family: 'Lato';
+		}
+	</style>
+    </head>
+    <body>
+	<header>
+		<nav class="top-nav blue-grey">
+		<div class="container">
+		<div class="nav-wrapper">
+		<a class="page-title">FeedbackAPP</a>
+		</div>
+		</div>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+		<div class="row">
+		<div class="s12 m9 l10">
+			<h2 class="header">Events</h2>
+			<div class="collection">
+			<!-- testing events
+			<a href="#!" class="collection-item">Grill my Project <span class="hashtag right">#ProjectGrill</span></a>
+			<a href="#!" class="collection-item">Grants for Apps <span class="hashtag right">#G4A</span></a> -->
+			{% for event in events %}
+			<a href="#!" class="collection-item">{{event.event_name}} <span class="hashtag right">#{{event.event_htag}}</span></a>
+			{% endfor %}
+			
+			</div>
+		</div>
+		</div>
+		</div>
+	</main>
+    </body>
+</html>
