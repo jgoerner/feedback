@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from . import views
 
+app_name="listener"
 urlpatterns = [
-    url(r'^$', views.stay_tuned, name="stay_tuned"),
-    url(r'^events/$', views.events, name="events"),
+    url(r'^$', views.events, name="events"),
+    url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name="detail"),
 ]

@@ -15,7 +15,7 @@
 		<nav class="top-nav blue-grey">
 		<div class="container">
 		<div class="nav-wrapper">
-		<a class="page-title">FeedbackAPP</a>
+		<a class="page-title">{{ event.event_name }}</a>
 		</div>
 		</div>
 		</nav>
@@ -24,19 +24,11 @@
 		<div class="container">
 		<div class="row">
 		<div class="s12 m9 l10">
-			<h2 class="header">Events</h2>
-			<div class="collection">
-			<!-- testing events
-			<a href="#!" class="collection-item">Grill my Project <span class="hashtag right">#ProjectGrill</span></a>
-			<a href="#!" class="collection-item">Grants for Apps <span class="hashtag right">#G4A</span></a> -->
-			{% for event in events %}
-			<a href="#!" class="collection-item">{{event.event_name}} <span class="hashtag right">#{{event.event_htag}}</span></a>
-			{% endfor %}
-			
-			</div>
+		<a href="{% url 'listener:events' %}">BACK</a>
 		</div>
 		</div>
 		</div>
 	</main>
     </body>
 </html>
+
