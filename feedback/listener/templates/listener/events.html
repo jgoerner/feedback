@@ -23,12 +23,9 @@
 	<main>
 		<div class="container">
 		<div class="row">
-		<div class="s12 m9 l10">
+		<div class="s12">
 			<h2 class="header">Events</h2>
 			<div class="collection">
-			<!-- testing events
-			<a href="#!" class="collection-item">Grill my Project <span class="hashtag right">#ProjectGrill</span></a>
-			<a href="#!" class="collection-item">Grants for Apps <span class="hashtag right">#G4A</span></a> -->
 			{% for event in events %}
 			<a href="{% url 'listener:detail' event.id %}" class="collection-item">{{event.event_name}} <span class="hashtag right">#{{event.event_htag}}</span></a>
 			{% endfor %}

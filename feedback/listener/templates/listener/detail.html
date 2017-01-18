@@ -4,9 +4,22 @@
         {% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'listener/materialize/css/materialize.css' %}" />
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<style>
 		body{
 		font-family: 'Lato';
+		}
+		.voting{
+		height: 30%;
+		box-shadow: 0px 0px 10px black;
+		}
+		.good{
+		color: white; 
+		background: #034c3c;
+		}
+		.bad{
+		color: white; 
+		background: #93032e;
 		}
 	</style>
     </head>
@@ -15,19 +28,37 @@
 		<nav class="top-nav blue-grey">
 		<div class="container">
 		<div class="nav-wrapper">
-		<a class="page-title">{{ event.event_name }}</a>
+		<a href="{% url 'listener:events' %}" class="page-title"><i class="large material-icons">list</i></a>
 		</div>
 		</div>
 		</nav>
 	</header>
 	<main>
-		<div class="container">
-		<div class="row">
-		<div class="s12 m9 l10">
-		<a href="{% url 'listener:events' %}">BACK</a>
+	<div class="container">
+	<div class="row">
+		<div class="col s12 center section">
+			<h2 class="header">{{ event.event_name }} - <span class="hashtag">#{{ event.event_htag }}</span></h2>	
+			<div class="divider"></div>
 		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 center">
+		<a href="#">
+		<div class="voting good valign-wrapper">
+			<i class="large material-icons valign center-block">thumb_up</i>
 		</div>
+		</a>
 		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+		<a href="#">
+       		<div class="voting bad valign-wrapper">
+			<i class="large material-icons valign center-block" >thumb_down</i>
+		</div>
+		</a>
+	</div>
+	</div>
 	</main>
     </body>
 </html>
