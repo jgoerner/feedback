@@ -18,6 +18,7 @@ class DetailView(generic.DetailView):
     template_name = 'listener/detail.html'
 
 def vote(response, event_id):
+    print(response.method)
     # process POST requests only
     if response.method == "POST":
         # Raise error in case event does not exist 
@@ -32,3 +33,9 @@ def vote(response, event_id):
     vote.save()
     # Redirect to page that was raising the POST request
     return HttpResponseRedirect(reverse('listener:detail', kwargs={'pk':event_id}))
+
+def votings(response):
+    if response.method == "POST":
+        all_votes = Vote.objects.all()
+        all_votes.delete()
+    return HttpResponseRedirect(reverse("listener:events"))

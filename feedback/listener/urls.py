@@ -19,6 +19,7 @@ from . import views
 app_name="listener"
 urlpatterns = [
     url(r'^$', views.events, name="events"),
+    url(r'^votings$', views.votings, name="votings"),
     url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name="detail"),
     url(r'^(?P<event_id>\d+)/votings$', views.vote, name='vote'),
 ]
