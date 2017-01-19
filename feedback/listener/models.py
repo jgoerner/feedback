@@ -10,3 +10,9 @@ class Event(models.Model):
     # Event Methods #
     def __str__(self):
         return self.event_name
+
+
+class Vote(models.Model):
+    # Reference to Event #
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    rating = models.IntegerField()
