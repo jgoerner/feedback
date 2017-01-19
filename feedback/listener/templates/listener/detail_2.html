@@ -1,0 +1,75 @@
+<html>
+    <head>
+	{# include stylesheets #}
+        {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'listener/materialize/css/materialize.css' %}" />
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		body{
+		font-family: 'Lato';
+		}
+		.voting{
+		height: 30%;
+		box-shadow: 0px 0px 10px black;
+		}
+		.good{
+		color: white; 
+		background: #034c3c;
+		}
+		.bad{
+		color: white; 
+		background: #93032e;
+		}
+		.mybtn{
+		border:none;
+		width:100%;
+		}
+		.good:focus{
+		background:#356f62;
+		}
+		.bad:focus{
+		background:#a83557;
+		}
+	</style>
+    </head>
+    <body>
+	<header>
+		<nav class="top-nav blue-grey">
+		<div class="container">
+		<div class="nav-wrapper">
+		<a href="{% url 'listener:events' %}" class="page-title"><i class="large material-icons">list</i></a>
+		</div>
+		</div>
+		</nav>
+	</header>
+	<main>
+	<div class="container">
+	<div class="row">
+		<div class="col s12 center section">
+			<h2 class="header">{{ event.event_name }} - <span class="hashtag">#{{ event.event_htag }}</span></h2>	
+			<div class="divider"></div>
+		</div>
+	</div>
+	<form  method="get">
+	{% csrf_token %}
+	<div class="row">
+	<div class="col s12 center">
+	<button type="submit" class="mybtn voting good valign-wrapper" name="opinion" value="good">
+	<i class="large material-icons valign center-block">thumb_up</i> 
+	</button>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col s12 center">
+	<button type="submit" class="mybtn voting bad valign-wrapper" name="opinion" value="bad">
+	<i class="large material-icons valign center-block">thumb_down</i> 
+	</button>
+	</div>
+	</div>
+	</form>
+	</div>
+	</main>
+    </body>
+</html>
+

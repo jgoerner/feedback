@@ -13,4 +13,4 @@ def events(response):
 
 class DetailView(generic.DetailView):
     model = Event
-    template_name = 'listener/detail.html'
+    template_name = 'listener/detail_2.html'
