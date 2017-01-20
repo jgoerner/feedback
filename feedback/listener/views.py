@@ -18,8 +18,6 @@ class DetailView(generic.DetailView):
     template_name = 'listener/detail.html'
 
 def vote(response, event_id):
-    print(response.method)
-    print(list(response.POST.lists()))
     # process POST requests only
     if response.method == "POST":
         # Raise error in case event does not exist 

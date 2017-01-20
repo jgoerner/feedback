@@ -5,6 +5,7 @@ $('#vote-form').on('submit', function(event){
 });
 
 $(".mybtn").on('click', function(){
+//	Materialize.toast("asdf", 2000);
 	var opinion_val = $(this).val()
 	create_vote(opinion_val);
 });
