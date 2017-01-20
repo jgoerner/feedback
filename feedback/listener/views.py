@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
-#from django.urls import reverse
 from django.core.urlresolvers import reverse
+import json
 from .models import Event, Vote
 
 app_name='listener'
@@ -19,6 +19,7 @@ class DetailView(generic.DetailView):
 
 def vote(response, event_id):
     print(response.method)
+    print(list(response.POST.lists()))
     # process POST requests only
     if response.method == "POST":
         # Raise error in case event does not exist 
@@ -31,9 +32,18 @@ def vote(response, event_id):
     # MAGIC PART #
     vote = Vote.objects.create(event=event, rating=rating)
     vote.save()
+    result = {}
+    result['msg'] = "Vote created successfully"
+    result['event_id'] = event_id
+    result['rating'] = rating
     # Redirect to page that was raising the POST request
-    return HttpResponseRedirect(reverse('listener:detail', kwargs={'pk':event_id}))
+#    return HttpResponseRedirect(reverse('listener:detail', kwargs={'pk':event_id}))
+    return HttpResponse(
+        json.dumps(result),
+        content_type="application/json"
+    )
 
+# quick and dirty to delete all posts
 def votings(response):
     if response.method == "POST":
         all_votes = Vote.objects.all()
