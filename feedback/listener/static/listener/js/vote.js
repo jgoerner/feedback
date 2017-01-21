@@ -12,11 +12,15 @@ $(".mybtn").on('click', function(){
 
 // AJAX vote //
 function create_vote(opinion_val){
+	// create timestamp
+	time_raw = new Date();
+	time_iso = time_raw.toISOString();
 	$.ajax({
 		url: "votings",
 		type: "POST",
 		data: { 
-			opinion : opinion_val
+			opinion : opinion_val,
+			vote_time : time_iso
 	       	},
 		// it works
 		success: function(json){

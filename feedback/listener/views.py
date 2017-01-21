@@ -1,3 +1,4 @@
+# TODO POST vs GET in vote()
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
@@ -28,12 +29,14 @@ def vote(response, event_id):
         else:
             rating = -1
     # MAGIC PART #
-    vote = Vote.objects.create(event=event, rating=rating)
+    vote_time = response.POST.get('vote_time')
+    vote = Vote.objects.create(event=event, rating=rating, vote_time=vote_time)
     vote.save()
     result = {}
     result['msg'] = "Vote created successfully"
     result['event_id'] = event_id
     result['rating'] = rating
+    result['vote_time'] = response.POST.get('vote_time')
     # Redirect to page that was raising the POST request
 #    return HttpResponseRedirect(reverse('listener:detail', kwargs={'pk':event_id}))
     return HttpResponse(

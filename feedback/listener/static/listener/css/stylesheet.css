@@ -23,11 +23,9 @@ body{
 }
 
 .good:focus{
-/*  background:#356f62;*/ 
     background: #034c3c; 
 }
 
 .bad:focus{
-/*  background:#a83557; */
     background: #93032e;
 }

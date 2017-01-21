@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
@@ -16,3 +17,4 @@ class Vote(models.Model):
     # Reference to Event #
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     rating = models.IntegerField()
+    vote_time = models.DateTimeField(default=datetime.now, blank=True)
