@@ -1,4 +1,5 @@
 # TODO POST vs GET in vote()
+# TODO naming change "response" --> "request"
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic

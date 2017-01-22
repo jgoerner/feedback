@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -18,3 +19,4 @@ class Vote(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     rating = models.IntegerField()
     vote_time = models.DateTimeField(default=datetime.now, blank=True)
+    voter = models.ForeignKey(User, default=-1)
