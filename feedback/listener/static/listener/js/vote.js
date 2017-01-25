@@ -6,21 +6,26 @@ $('#vote-form').on('submit', function(event){
 
 $(".mybtn").on('click', function(){
 //	Materialize.toast("asdf", 2000);
-	var opinion_val = $(this).val()
+	var opinion_val = $(this).val();
 	create_vote(opinion_val);
 });
 
 // AJAX vote //
 function create_vote(opinion_val){
 	// create timestamp
-	time_raw = new Date();
-	time_iso = time_raw.toISOString();
+	usrid= document.getElementById("userID").value;
+	if (usrid == "None"){
+		usrid = -1;
+	};
+	var time_raw = new Date();
+	var time_iso = time_raw.toISOString();
 	$.ajax({
 		url: "votings",
 		type: "POST",
 		data: { 
 			opinion : opinion_val,
-			vote_time : time_iso
+			vote_time : time_iso,
+			voter : usrid
 	       	},
 		// it works
 		success: function(json){

@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
 from django.core.urlresolvers import reverse
 import json
-from .models import Event, Vote
+from .models import Event, Vote, User
 
 app_name='listener'
 def stay_tuned(response):
@@ -29,15 +29,20 @@ def vote(response, event_id):
             rating = 1
         else:
             rating = -1
+        voter_id = response.POST.get("voter")
+        # TODO change to PK of "anonymous"
+        voter = get_object_or_404(User, pk=voter_id)
     # MAGIC PART #
     vote_time = response.POST.get('vote_time')
-    vote = Vote.objects.create(event=event, rating=rating, vote_time=vote_time)
+    vote = Vote.objects.create(event=event, rating=rating,
+                               vote_time=vote_time, voter=voter)
     vote.save()
     result = {}
     result['msg'] = "Vote created successfully"
     result['event_id'] = event_id
     result['rating'] = rating
     result['vote_time'] = response.POST.get('vote_time')
+    result['voter_id'] = voter_id
     # Redirect to page that was raising the POST request
 #    return HttpResponseRedirect(reverse('listener:detail', kwargs={'pk':event_id}))
     return HttpResponse(
