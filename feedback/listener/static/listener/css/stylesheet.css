@@ -29,3 +29,8 @@ body{
 .bad:focus{
     background: #93032e;
 }
+
+.nav-wrapper .material-icons{
+    margin-left:15px;
+    margin-right:5px;
+}

@@ -19,6 +19,10 @@ class DetailView(generic.DetailView):
     model = Event
     template_name = 'listener/detail.html'
 
+def testing(request):
+    all_events = Event.objects.all()
+    return render(request, 'listener/test.html', {'events':all_events})
+
 def vote(response, event_id):
     # process POST requests only
     if response.method == "POST":
