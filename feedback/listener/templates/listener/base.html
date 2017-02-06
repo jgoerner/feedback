@@ -12,6 +12,7 @@
 	<title>{% block title %}{% endblock %}</title>
     </head>
     <body>
+	    <div id="triangular">
 	    <nav>
 		    <div class="nav-wrapper blue-grey">
 			    <a href="{% url 'listener:events'  %}" class="brand-logo center">
@@ -37,5 +38,6 @@
 	    </nav>
 	    {% block content %}
 	    {% endblock %}
+	   </div>
     </body>
 </html>

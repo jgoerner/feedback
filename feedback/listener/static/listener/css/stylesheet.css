@@ -38,3 +38,11 @@ body{
 .my-wrapper{
 	height: 80%;
 }
+
+/**
+#triangular{
+	height:100%;
+	background: url(../img/trianglify.svg);
+	background-size: cover;
+}	
+**/
