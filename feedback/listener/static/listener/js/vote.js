@@ -15,7 +15,7 @@ function create_vote(opinion_val){
 	// create timestamp
 	usrid= document.getElementById("userID").value;
 	if (usrid == "None"){
-		usrid = -1;
+		usrid = 0;
 	};
 	var time_raw = new Date();
 	var time_iso = time_raw.toISOString();

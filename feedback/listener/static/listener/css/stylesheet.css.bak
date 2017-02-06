@@ -1,0 +1,36 @@
+body{
+  font-family: 'Lato';
+}
+
+.voting{
+  height: 30%;
+  box-shadow: 0px 0px 10px black;
+}
+
+.good{
+  color: white; 
+  background: #034c3c;
+}
+
+.bad{
+  color: white; 
+  background: #93032e;
+}
+
+.mybtn{
+  border:none;
+  width:100%;
+}
+
+.good:focus{
+    background: #034c3c; 
+}
+
+.bad:focus{
+    background: #93032e;
+}
+
+.nav-wrapper .material-icons{
+    margin-left:15px;
+    margin-right:5px;
+}
