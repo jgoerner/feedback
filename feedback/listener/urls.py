@@ -23,7 +23,6 @@ urlpatterns = [
     url(r'^votings$', views.votings, name="votings"),
     url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name="detail"),
     url(r'^(?P<event_id>\d+)/votings$', views.vote, name='vote'),
-    url(r'^testing/$', views.testing, name="testing"),
     url(r'^login/$', auth_views.login, {'template_name':'listener/login.html'}, name='login'),
     url(r'logout/$', auth_views.logout, {'template_name':'listener/logout.html', 'next_page':'/events/'}, name='logout'),
 ]

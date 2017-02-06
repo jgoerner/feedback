@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="s12">
 			<h5 class="center-align ">All Events</h5>
-			<hr>
+			<div class="divider"></div>
 			<div class="collection">
 				{% for event in events %}
 				<a href="{% url 'listener:detail' event.id %}" class="collection-item">{{event.event_name}} <span class="hashtag right">#{{event.event_htag}}</span></a>
